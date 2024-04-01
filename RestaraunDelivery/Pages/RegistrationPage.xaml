@@ -1,0 +1,35 @@
+﻿<Page x:Class="RestaraunDelivery.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RestaraunDelivery.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Grid>
+        <Grid.Background >
+            <ImageBrush Stretch="Fill"  AlignmentY="Top" AlignmentX="Center" ImageSource="/Resources/Backgraund.jpg" />
+        </Grid.Background>
+        <Image Source="/Resources/Computer.png" HorizontalAlignment="Left" />
+        <Grid Width="630" Height="4" Background="White" HorizontalAlignment="Center" Margin="-325 0 0 38" VerticalAlignment="Bottom"></Grid>
+        <Border  CornerRadius="20"  BorderThickness="2" Background="White" Margin="0 30 30 0" Height="520" Width="310" HorizontalAlignment="Right"  BorderBrush="Black">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" FontSize="25" Margin="0 10 0 0">Регистрация</TextBlock>
+                <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 0 0 0" Foreground="Black">Логин</TextBlock>
+                <TextBox Opacity="0.6" TextAlignment="Center" Background="#E9E9E9" Style="{StaticResource RoundTextBlock}" FontSize="25" Text="{Binding Login}"  x:Name="LoginTb" Width="250" Height="40" ></TextBox>
+                <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 10 0 0" Foreground="Black">Пароль</TextBlock>
+                <TextBox  Opacity="0.6"  Background="#E9E9E9" Style="{StaticResource RoundTextBlock}" Text="{Binding Password}" MaxLength="30" PreviewTextInput="LoginTb_PreviewTextInput" TextAlignment="Center" FontSize="25"   x:Name="PasswordTb" Width="250" Height="40"></TextBox>
+                <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 10 0 0" Foreground="Black">Имя</TextBlock>
+                <TextBox Opacity="0.6" TextAlignment="Center" Style="{StaticResource RoundTextBlock}" Background="#E9E9E9" Text="{Binding Name}" MaxLength="25" PreviewTextInput="NameTb_PreviewTextInput" FontSize="25"   x:Name="NameTb" Width="250" Height="40" ></TextBox>
+                <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 10 0 0" Foreground="Black">Телефон</TextBlock>
+                <TextBox Opacity="0.6" TextAlignment="Center" Style="{StaticResource RoundTextBlock}" Background="#E9E9E9" Text="{Binding PhoneNumber}" MaxLength="25" PreviewTextInput="PhoneNumberTb_PreviewTextInput" FontSize="25"   x:Name="PhoneNumberTb" Width="250" Height="40" ></TextBox>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 40 0 0 ">
+                    <Button Margin="0 0 0 0" FontWeight="ExtraBold" FontSize="12" x:Name="MainClientBt"  Style="{StaticResource RoundButton}"  Click="MainClientBt_Click"  Height="40" Width="100">Сохранить</Button>
+                    <Button Margin="50 0 0 0" FontWeight="ExtraBold" FontSize="12" x:Name="ExitBt" Style="{StaticResource RoundButton}"  Click="ExitBt_Click" Height="40" Width="100">Отмена</Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
