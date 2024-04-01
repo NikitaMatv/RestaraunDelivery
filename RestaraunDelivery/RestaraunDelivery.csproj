@@ -148,6 +148,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +164,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ProfileEditingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +181,9 @@
     <Compile Include="Pages\BasketPage.xaml.cs">
       <DependentUpon>BasketPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -177,6 +192,12 @@
     </Compile>
     <Compile Include="Pages\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfileEditingPage.xaml.cs">
+      <DependentUpon>ProfileEditingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
@@ -226,6 +247,13 @@
       <DependentUpon>RestaraunDB.edmx</DependentUpon>
       <LastGenOutput>RestaraunDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Contact-us.png" />
+    <Resource Include="Resources\Dessert.png" />
+    <Resource Include="Resources\Drinks.png" />
+    <Resource Include="Resources\First.png" />
+    <Resource Include="Resources\Salad.png" />
+    <Resource Include="Resources\Second.png" />
+    <Resource Include="Resources\ThrowOffs.png" />
     <Resource Include="Resources\Collapse.png" />
     <Resource Include="Resources\Icon.png" />
     <Resource Include="Resources\Close.png" />

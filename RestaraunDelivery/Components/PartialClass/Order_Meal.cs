@@ -9,28 +9,22 @@ namespace RestaraunDelivery.Components
 {
     public partial class Order_Meal
     {
-      public  Visibility VisabilityBt
+        public Visibility VisabilityBt
         {
             get
             {
-                int MId = (int)MealID;
-                Order_Meal meal = App.DB.Order_Meal.FirstOrDefault(x => x.ID == MId);
-                if(CustomerID == App.LoggedCustomer.ID && OrderID == null != true)
+                if (Count == 20)
                 {
-                    if (meal != null)
-                    {
-                        return Visibility.Hidden;
-                    }
-                    else
-                    {
-                        return Visibility.Visible;
-                    }
-                    
+                    return Visibility.Hidden;
                 }
-                return Visibility.Visible;
+                else
+                {
+                    return Visibility.Visible;
+                }               
             }
-           
+
         }
-     
     }
 }
+     
+

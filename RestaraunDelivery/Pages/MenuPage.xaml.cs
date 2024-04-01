@@ -26,7 +26,7 @@ namespace RestaraunDelivery.Pages
             InitializeComponent();
             LBMeal.ItemsSource = App.DB.Meal.ToList();
         }
-
+        public IEnumerable<Meal> meal = App.DB.Meal.ToList();
         private void BtAddInCart_Click(object sender, RoutedEventArgs e)
         {
             var selectedclient = (sender as Button).DataContext as Meal;
@@ -61,6 +61,58 @@ namespace RestaraunDelivery.Pages
                 Button bt = sender as Button;
                 bt.Visibility = Visibility.Hidden;
             }
+        }
+        private void Update ()
+        { 
+            if(TbSearch.Text.Length > 0)
+            {
+                meal = meal.Where(x => x.Name.ToLower().Contains(TbSearch.Text.Trim().ToLower()));
+                LBMeal.ItemsSource = meal.ToList();
+            }
+            else
+            {
+                LBMeal.ItemsSource = meal.ToList();
+            }
+        }
+        private void BtFirst_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            meal = App.DB.Meal.Where(x=>x.CotegoriesID == 1).ToList();
+            Update();
+        }
+        private void BtSecond_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            meal = App.DB.Meal.Where(x => x.CotegoriesID == 2).ToList();
+            Update();
+        }
+
+        private void BtSalad_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            meal = App.DB.Meal.Where(x => x.CotegoriesID == 3).ToList();
+            Update();
+        }
+
+        private void BtDessert_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            meal = App.DB.Meal.Where(x => x.CotegoriesID == 4).ToList();
+            Update();
+        }
+
+        private void BtDrinks_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            meal = App.DB.Meal.Where(x => x.CotegoriesID == 5).ToList();
+            Update();
+        }
+
+        private void BtAll_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            meal = App.DB.Meal.ToList();
+            TbSearch.Text = string.Empty;
+            Update();
+        }
+
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Update();
         }
     }
 }

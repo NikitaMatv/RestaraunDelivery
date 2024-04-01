@@ -28,7 +28,7 @@ namespace RestaraunDelivery.Pages
 
         private void BtHistory_Click(object sender, RoutedEventArgs e)
         {
-
+            MemuFame.NavigationService.Navigate(new HistoryPage());
         }
 
 
@@ -41,7 +41,7 @@ namespace RestaraunDelivery.Pages
 
         private void BtProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            MemuFame.NavigationService.Navigate(new ProfilePage(App.LoggedCustomer));
         }
 
         private void BtCart_Click(object sender, RoutedEventArgs e)

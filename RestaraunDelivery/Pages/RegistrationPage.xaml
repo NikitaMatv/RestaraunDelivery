@@ -22,7 +22,7 @@
                 <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 10 0 0" Foreground="Black">Пароль</TextBlock>
                 <TextBox  Opacity="0.6"  Background="#E9E9E9" Style="{StaticResource RoundTextBlock}" Text="{Binding Password}" MaxLength="30" PreviewTextInput="LoginTb_PreviewTextInput" TextAlignment="Center" FontSize="25"   x:Name="PasswordTb" Width="250" Height="40"></TextBox>
                 <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 10 0 0" Foreground="Black">Имя</TextBlock>
-                <TextBox Opacity="0.6" TextAlignment="Center" Style="{StaticResource RoundTextBlock}" Background="#E9E9E9" Text="{Binding Name}" MaxLength="25" PreviewTextInput="NameTb_PreviewTextInput" FontSize="25"   x:Name="NameTb" Width="250" Height="40" ></TextBox>
+                <TextBox Opacity="0.6" TextAlignment="Center" Style="{StaticResource RoundTextBlock}" Background="#E9E9E9" Text="{Binding FirstName}" MaxLength="25" PreviewTextInput="NameTb_PreviewTextInput" FontSize="25"   x:Name="NameTb" Width="250" Height="40" ></TextBox>
                 <TextBlock FontWeight="ExtraBold" FontSize="12" Margin="10 10 0 0" Foreground="Black">Телефон</TextBlock>
                 <TextBox Opacity="0.6" TextAlignment="Center" Style="{StaticResource RoundTextBlock}" Background="#E9E9E9" Text="{Binding PhoneNumber}" MaxLength="25" PreviewTextInput="PhoneNumberTb_PreviewTextInput" FontSize="25"   x:Name="PhoneNumberTb" Width="250" Height="40" ></TextBox>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 40 0 0 ">
