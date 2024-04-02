@@ -5,23 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="54818de8164145b69baa2ef59bc16c77" Name="Diagram1">
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Cotegories" Width="1.5" PointX="3.75" PointY="16.75" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Customer" Width="1.5" PointX="6" PointY="11.75" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Cotegories" Width="1.5" PointX="3.75" PointY="15.75" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Customer" Width="1.5" PointX="6" PointY="18.75" />
         <EntityTypeShape EntityType="RestarauntDeliveryModel.Deliverer" Width="1.5" PointX="5.25" PointY="8.875" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Delivery" Width="1.5" PointX="8.25" PointY="6.25" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Employee" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Delivery" Width="1.5" PointX="8.25" PointY="6.125" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Employee" Width="1.5" PointX="3" PointY="3.875" />
         <EntityTypeShape EntityType="RestarauntDeliveryModel.EmployeeRole" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Ingridient" Width="1.5" PointX="8.75" PointY="11" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Meal" Width="1.5" PointX="6" PointY="16.25" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Meal_Ingridient" Width="1.5" PointX="11" PointY="14" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Options" Width="1.5" PointX="3.75" PointY="12.125" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Ingridient" Width="1.5" PointX="8.75" PointY="10.875" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Meal" Width="1.5" PointX="6" PointY="15.25" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Meal_Ingridient" Width="1.5" PointX="11" PointY="14.375" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Options" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="RestarauntDeliveryModel.Order" Width="1.5" PointX="6" PointY="4" />
         <EntityTypeShape EntityType="RestarauntDeliveryModel.Order_Meal" Width="1.5" PointX="8.25" PointY="2.5" />
         <EntityTypeShape EntityType="RestarauntDeliveryModel.Restaurant" Width="1.5" PointX="0.75" PointY="4.875" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.StatusOrder" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Supplier" Width="1.5" PointX="8.75" PointY="14.125" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.Supplier_ingridient" Width="1.5" PointX="11" PointY="11" />
-        <EntityTypeShape EntityType="RestarauntDeliveryModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.StatusOrder" Width="1.5" PointX="3.75" PointY="12.125" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Supplier" Width="1.5" PointX="8.75" PointY="14" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.Supplier_ingridient" Width="1.5" PointX="11" PointY="10.875" />
+        <EntityTypeShape EntityType="RestarauntDeliveryModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="9.25" />
         <AssociationConnector Association="RestarauntDeliveryModel.FK_Meal_Cotegories" />
         <AssociationConnector Association="RestarauntDeliveryModel.FK_Order_Meal_Customer" />
         <AssociationConnector Association="RestarauntDeliveryModel.FK_Deliverer_Employee" />

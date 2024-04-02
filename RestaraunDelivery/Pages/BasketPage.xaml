@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2">
             <StackPanel  Orientation="Horizontal"  Background="Transparent">
-                <CheckBox x:Name="CbDeliverer" Content="С собой" FontSize="18" FontWeight="Bold" Unchecked="CheckBox_Checked" Checked="CheckBox_Checked" VerticalAlignment="Center" ></CheckBox>
+                <CheckBox x:Name="CbDeliverer" Content="Доставить на адрес" FontSize="18" FontWeight="Bold" Unchecked="CheckBox_Checked" Checked="CheckBox_Checked" VerticalAlignment="Center" ></CheckBox>
                 <StackPanel Orientation="Horizontal" x:Name="SpDeliverer">
                     <TextBlock Padding="5" Margin="5 0 0 0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Text="Адре доставки: "></TextBlock>
                     <Border CornerRadius="20" Background="Transparent" BorderBrush="Black" BorderThickness="2" Opacity="0.6" >
@@ -27,9 +27,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" x:Name="SpRestauraun">
                     <TextBlock Padding="5" Margin="5 0 0 0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Text="Ресторан: "></TextBlock>
-
                     <ComboBox  Background="Transparent" BorderBrush="Transparent" x:Name="CbRestauran"  BorderThickness="0" Padding="20 0 0 0"  VerticalContentAlignment="Center" FontSize="25"  Width="250" Height="40" ItemsSource="{Binding Restaurant}" DisplayMemberPath="Addres"></ComboBox>
-
                 </StackPanel>
                 <TextBlock Padding="5" Margin="5 0 0 0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Text="Итоговая цена: "></TextBlock>
                 <TextBlock Padding="5" VerticalAlignment="Center" FontSize="18" x:Name="TbPrice"  Text="{Binding TotalPrice}"></TextBlock>
@@ -37,7 +35,6 @@
                 <Button x:Name="BtZakaz" Margin="5" Width="100" Style="{StaticResource RoundButton}" Content="Заказать" Click="Button_Click_3"></Button>
             </StackPanel>
         </Border>
-        
         <ListBox VerticalAlignment="Top" Grid.ColumnSpan="2" x:Name="LbCart" HorizontalContentAlignment="Stretch" AlternationCount="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -81,24 +78,24 @@
                         </StackPanel>
                         <Grid Width="120" Grid.Row="0" Grid.Column="3">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"></RowDefinition>
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Button Margin="3" FontSize="14" Grid.Row="0" Grid.Column="0" Width="35" Height="35"  Background="Transparent" Visibility="{Binding VisabilityBt}" Style="{StaticResource RoundButton}" Padding="10"  Click="Button_Click_2" CommandParameter="{Binding}">
+                            <Button Margin="3" FontSize="14" Grid.Row="0" Grid.Column="0" Width="45" Height="45"  Background="Transparent" Visibility="{Binding VisabilityBt}"  BorderBrush="Transparent" Padding="10"  Click="Button_Click_2" CommandParameter="{Binding}">
                                 <Button.Content>
                                     <Image Source="/Resources/plus.png" Stretch="UniformToFill"></Image>
                                 </Button.Content>
                             </Button>
-                            <Button Margin="3" FontSize="14" Grid.Row="1" Grid.Column="0" Width="35" Height="35"  Background="Transparent" Style="{StaticResource RoundButton}" Padding="10" Click="Button_Click" CommandParameter="{Binding}">
+                            <Button Margin="3" FontSize="14" Grid.Row="1" Grid.Column="0" Width="45" Height="45"  Background="Transparent" BorderBrush="Transparent" Padding="10" Click="Button_Click" CommandParameter="{Binding}">
                                 <Button.Content>
                                     <Image Source="/Resources/minus.png" Stretch="UniformToFill"></Image>
                                 </Button.Content>
                             </Button>
-                            <Button Margin="3"  Grid.Row="0" Grid.RowSpan="2" Width="70" Height="70" Background="Transparent"  Style="{StaticResource RoundButton}" Grid.Column="1" Padding="10" Click="Button_Click_1" CommandParameter="{Binding}">
+                            <Button Margin="3"  Grid.Row="0" Grid.RowSpan="2" Width="70" Height="70" Background="Transparent"  BorderBrush="Transparent" Grid.Column="1" Padding="10" Click="Button_Click_1" CommandParameter="{Binding}">
                                 <Button.Content>
                                     <Image Source="/Resources/cartRemove.png" Stretch="Fill"></Image>
                                 </Button.Content>

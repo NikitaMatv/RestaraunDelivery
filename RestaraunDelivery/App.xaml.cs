@@ -14,8 +14,10 @@ namespace RestaraunDelivery
     /// </summary>
     public partial class App : Application
     {
-        public static  RestarauntDeliveryEntities DB = new RestarauntDeliveryEntities();
+        public static RestarauntDeliveryEntities DB = new RestarauntDeliveryEntities();
         public static Customer LoggedCustomer;
         public static bool IsAutorizate = false;
     }
 }
+
+

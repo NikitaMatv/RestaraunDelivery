@@ -10,7 +10,7 @@
 
 
     <Grid>
-        <Grid.Background >
+        <Grid.Background>
             <ImageBrush Stretch="Fill"  AlignmentY="Top" AlignmentX="Center" ImageSource="/Resources/Backgraund.jpg" />
         </Grid.Background>
         <Border Background="White" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Black" BorderThickness="2" Height="420" Width="310" CornerRadius="50">

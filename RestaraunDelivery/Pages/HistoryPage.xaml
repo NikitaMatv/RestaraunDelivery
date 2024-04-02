@@ -13,10 +13,20 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ListBox VerticalAlignment="Top" Grid.ColumnSpan="2" x:Name="LbCart" HorizontalContentAlignment="Stretch" AlternationCount="2">
+        <ListBox VerticalAlignment="Top" Grid.ColumnSpan="2" Height="600"  x:Name="LbCart" HorizontalContentAlignment="Stretch" AlternationCount="2">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" Width="910"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="2" BorderBrush="Black">
+                    <Border BorderThickness="2" Width="410" BorderBrush="Black">
+                        <Border.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Подробние" x:Name="BtDetails" Click="BtDetails_Click"></MenuItem>
+                            </ContextMenu>
+                        </Border.ContextMenu>
                         <Grid>
                             <Grid.Resources>
                                 <Style TargetType="{x:Type Button}">
@@ -26,52 +36,39 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="FontFamily" Value="Arial"/>
                                 </Style>
-
                             </Grid.Resources>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Border BorderBrush="Gray" BorderThickness="2" Margin="10 10 10 10">
-                                <Image Source="{Binding Meal.Image}"  Width="100" Height="100" Stretch="UniformToFill"></Image>
-                            </Border>
-                            <StackPanel Grid.Row="0" Grid.Column="1">
-                                <TextBlock Padding="3" FontSize="18" FontWeight="Bold" Text="{Binding Meal.Name}"></TextBlock>
-                                <TextBlock Padding="3" FontSize="10" FontWeight="Bold" Text="{Binding Meal.Description}"></TextBlock>
-                                <StackPanel Margin="3" Orientation="Horizontal">
-                                    <TextBlock FontSize="12" FontWeight="Bold" Text="Цена за штуку: "></TextBlock>
-                                    <TextBlock FontSize="12" Text="{Binding Meal.Price}"></TextBlock>
-                                    <TextBlock FontSize="12" Text=" руб."></TextBlock>
-                                </StackPanel>
-                            </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Orientation="Vertical" Margin="5">
+                            <Grid HorizontalAlignment="Right"  Grid.Column="1">
+                                <TextBlock FontSize="18" Text="{Binding Price,StringFormat='Итого: {0} руб.'}"></TextBlock>
+                            </Grid>
+                            <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Orientation="Vertical" Margin="5" Grid.ColumnSpan="3">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="18" FontWeight="Bold" Text=" Заказ №"></TextBlock>
-                                    <TextBlock FontSize="18" Text="{Binding Order.ID}"></TextBlock>
+                                    <TextBlock FontSize="18" Text="{Binding ID}"></TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Количество: "></TextBlock>
-                                    <TextBlock FontSize="18" Text="{Binding Count}"></TextBlock>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Код заказа: " Visibility="{Binding VisabilityTbCode}">
+                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Код заказа: ">
                                     </TextBlock>
-                                    <TextBlock FontSize="18" Text="{Binding Order.Code}" Visibility="{Binding VisabilityTbCode}"></TextBlock>
-
+                                    <TextBlock FontSize="18" Text="{Binding Code}" ></TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Дата заказа: " Visibility="{Binding VisabilityTbData}"></TextBlock>
-                                    <TextBlock FontSize="18" Text="{Binding Order.DateTime , ConverterCulture=ru, StringFormat=D}" Visibility="{Binding VisabilityTbData}"></TextBlock>
+                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Дата заказа: " ></TextBlock>
+                                    <TextBlock FontSize="18" Text="{Binding DateTime , ConverterCulture=ru, StringFormat=D}" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Статус заказа: "></TextBlock>
+                                    <TextBlock FontSize="18" Text="{Binding StatusOrder.Name}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="18" FontWeight="Bold" Text=" Адрес получения заказ: "></TextBlock>
+                                    <TextBlock FontSize="18" Text="{Binding StrAddress}"></TextBlock>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
                     </Border>
-                    
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

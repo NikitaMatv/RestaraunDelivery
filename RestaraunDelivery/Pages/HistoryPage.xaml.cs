@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaraunDelivery.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,13 @@ namespace RestaraunDelivery.Pages
         public HistoryPage()
         {
             InitializeComponent();
-            LbCart.ItemsSource = App.DB.Order_Meal.Where(x => x.CustomerID == App.LoggedCustomer.ID && x.OrderID != null).ToList();
-        }     
+            LbCart.ItemsSource = App.DB.Order.Where(x => x.Order_Meal.FirstOrDefault(z=>z.CustomerID  == App.LoggedCustomer.ID) != null).ToList();        
+        }
+        private void BtDetails_Click(object sender, RoutedEventArgs e)
+        {
+            var meal = (sender as MenuItem).DataContext as Order;
+            NavigationService.Navigate(new DetailsOrderPage(meal));
+           
+        }
     }
 }

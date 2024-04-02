@@ -24,6 +24,7 @@
           <Property Name="Adress" Type="nvarchar" MaxLength="100" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Deliverer">
           <Key>
@@ -53,6 +54,7 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="RestaurantID" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="EmployeeRole">
           <Key>
@@ -562,6 +564,7 @@
           <Property Name="Adress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Order_Meal" Relationship="RestarauntDeliveryModel.FK_Order_Meal_Customer" FromRole="Customer" ToRole="Order_Meal" />
         </EntityType>
         <EntityType Name="Deliverer">
@@ -597,6 +600,7 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RestaurantID" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Deliverer" Relationship="RestarauntDeliveryModel.FK_Deliverer_Employee" FromRole="Employee" ToRole="Deliverer" />
           <NavigationProperty Name="Delivery" Relationship="RestarauntDeliveryModel.FK_Delivery_Employee" FromRole="Employee" ToRole="Delivery" />
           <NavigationProperty Name="EmployeeRole" Relationship="RestarauntDeliveryModel.FK_Employee_EmployeeRole" FromRole="Employee" ToRole="EmployeeRole" />
@@ -952,6 +956,7 @@
           <EntitySetMapping Name="Customer">
             <EntityTypeMapping TypeName="RestarauntDeliveryModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Adress" ColumnName="Adress" />
@@ -983,6 +988,7 @@
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="RestarauntDeliveryModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Login" ColumnName="Login" />

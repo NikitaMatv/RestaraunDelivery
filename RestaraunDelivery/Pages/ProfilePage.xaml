@@ -9,7 +9,7 @@
       Title="ProfilePage">
 
     <Grid>
-        <Image Source="/Resources/Contact-us.png" Margin="-30 0 0 0" HorizontalAlignment="Left"  />
+        <Image Source="/Resources/Contact-us.png" Margin="-10 0 0 0" HorizontalAlignment="Left"  Panel.ZIndex="-10"/>
 
         <Border  CornerRadius="20" BorderThickness="2" Background="White" Height="520" Width="310" HorizontalAlignment="Right"  BorderBrush="Black">
 
