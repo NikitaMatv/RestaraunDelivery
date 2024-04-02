@@ -28,52 +28,54 @@
         <ListBox VerticalAlignment="Top" x:Name="LBMeal" Grid.Row="1" HorizontalContentAlignment="Stretch" AlternationCount="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.Resources>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="FontFamily" Value="Arial"/>
-                                <Setter Property="FontSize" Value="12"/>
-                            </Style>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="FontFamily" Value="Arial"/>
-                            </Style>
+                    <Border Background="Transparent" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
+                        <Grid Background="Transparent">
+                            <Grid.Resources>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="FontFamily" Value="Arial"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                </Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="FontFamily" Value="Arial"/>
+                                </Style>
 
-                        </Grid.Resources>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Редактировать" x:Name="EditBt" Click="EditBt_Click"></MenuItem>
-                            </ContextMenu>
-                        </Grid.ContextMenu>
-                        <Border BorderBrush="Gray" BorderThickness="2">
-                            <Image Source="{Binding Meal.Image}" Width="100" Height="100" Stretch="UniformToFill"></Image>
-                        </Border>
-                        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left">
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Редактировать" x:Name="EditBt" Click="EditBt_Click"></MenuItem>
+                                </ContextMenu>
+                            </Grid.ContextMenu>
+                            <Border BorderBrush="Gray" BorderThickness="2">
+                                <Image Source="{Binding Meal.Image}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                            </Border>
+                            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left">
 
-                            <TextBlock Padding="3" FontSize="18" FontWeight="Bold" Text="{Binding Name}"></TextBlock>
-                            <StackPanel Margin="3" Orientation="Horizontal">
-                                <TextBlock FontSize="12" FontWeight="Bold"  Text="Описание: "></TextBlock>
-                                <TextBlock  FontSize="14"  TextWrapping="Wrap" Width="530" Text="{Binding Description}"></TextBlock>
+                                <TextBlock Padding="3" FontSize="18" FontWeight="Bold" Text="{Binding Name}"></TextBlock>
+                                <StackPanel Margin="3" Orientation="Horizontal">
+                                    <TextBlock FontSize="12" FontWeight="Bold"  Text="Описание: "></TextBlock>
+                                    <TextBlock  FontSize="14"  TextWrapping="Wrap" Width="530" Text="{Binding Description}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Margin="3" Orientation="Horizontal">
+                                    <TextBlock FontSize="12" FontWeight="Bold"  Text="Категория: "></TextBlock>
+                                    <TextBlock FontSize="12" Text="{Binding Cotegories.Name}"></TextBlock>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel Margin="3" Orientation="Horizontal">
-                                <TextBlock FontSize="12" FontWeight="Bold"  Text="Категория: "></TextBlock>
-                                <TextBlock FontSize="12" Text="{Binding Cotegories.Name}"></TextBlock>
+                            <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal" Margin="5">
+                                <TextBlock FontSize="18" FontWeight="Bold" Text="Цена: "></TextBlock>
+                                <TextBlock FontSize="18" Text="{Binding Price}"></TextBlock>
+                                <TextBlock FontSize="18" Text=" руб."></TextBlock>
                             </StackPanel>
-                        </StackPanel>
-                        <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal" Margin="5">
-                            <TextBlock FontSize="18" FontWeight="Bold" Text="Цена: "></TextBlock>
-                            <TextBlock FontSize="18" Text="{Binding Price}"></TextBlock>
-                            <TextBlock FontSize="18" Text=" руб."></TextBlock>
-                        </StackPanel>
-                    </Grid>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

@@ -53,11 +53,11 @@ namespace RestarauntDeliveryAdministrator.Pages
         {
             if (string.IsNullOrWhiteSpace(TbSelected.Text))
             {
-                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1).ToList();
+                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).ToList();
             }
             else
             {
-                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
+                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
             }
 
         }
@@ -67,19 +67,23 @@ namespace RestarauntDeliveryAdministrator.Pages
             Refreh();
         }
 
-        private void DelBt_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void DellBt_Click(object sender, RoutedEventArgs e)
         {
-
+            var selected = (sender as MenuItem).DataContext as Employee;
+            if(selected == null)
+            {
+                MessageBox.Show("Ошбика. Сотрудник не найден.");
+                return;
+            }
+            selected.IsDismissed = true;
+            App.DB.SaveChanges();
+            MessageBox.Show($"Сотрудник {selected.StrFullName} был уволен");
+            Refreh();
         }
 
         private void EditBt_Click(object sender, RoutedEventArgs e)
         {
-
+            //NavigationService.Navigate(new EmployeeAddEdintPages(new Employee()));
         }
     }
 }

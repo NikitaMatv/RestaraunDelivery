@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using RestarauntDeliveryAdministrator.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,21 +32,23 @@ namespace RestarauntDeliveryAdministrator.Pages
             NavigationService.Navigate(new ForgotPasswordPage());
         }
         private void AutorBt_Click(object sender, RoutedEventArgs e)
-        {
-            var employee = App.DB.Employee.FirstOrDefault(Cus => Cus.Login == LoginTb.Text);
+        {      
+             var  employee = App.DB.Employee.FirstOrDefault(Cus => Cus.Login == LoginTb.Text);       
+            if(employee == null)
+            {
+                LoginTb.Text = string.Empty;
+                PasswordTb.Password = string.Empty;
+                MessageBox.Show("Логин или пароль неверный");
+                return;
+            }
             if (employee.RoleID != 1)
             {
                 MessageBox.Show("У вас нету доступа к этому приложению. \n Приложение только для администратора!");
                 return;
-            }
-            if (employee == null)
-            {
-                MessageBox.Show("Логин неверный");
-                return;
-            }
+            }          
             if (employee.Password != PasswordTb.Password)
             {
-                MessageBox.Show("Пароль неверный");
+                MessageBox.Show("Логин или пароль неверный");
                 return;
             }
             App.LoggedEmployee = employee;
