@@ -32,23 +32,9 @@ namespace RestarauntDeliveryAdministrator.Pages
 
         private void AddBt_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new EmployeeAddEdintPages(new Employee()));
+            NavigationService.Navigate(new AddEditEmployeePage(new Employee()));
         }
-
-        private void RedBr_Click(object sender, RoutedEventArgs e)
-        {
-            var selectedorder = LVEmployee.SelectedItem as Employee;
-            if (selectedorder == null)
-            {
-                MessageBox.Show("Выберете сотрудника");
-                return;
-            }
-            //NavigationService.Navigate(new EmployeeAddEdintPages(selectedorder));
-        }
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            Refreh();
-        }
+     
         private void Refreh()
         {
             if (string.IsNullOrWhiteSpace(TbSelected.Text))
@@ -83,7 +69,13 @@ namespace RestarauntDeliveryAdministrator.Pages
 
         private void EditBt_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new EmployeeAddEdintPages(new Employee()));
+            var selected = (sender as MenuItem).DataContext as Employee;
+            if (selected == null)
+            {
+                MessageBox.Show("Ошбика. Сотрудник не найден.");
+                return;
+            }
+            NavigationService.Navigate(new AddEditEmployeePage(selected));
         }
     }
 }
