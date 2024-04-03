@@ -95,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\AddEditMealPage.xaml.cs">
+      <DependentUpon>AddEditMealPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\MailSendService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,6 +179,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AddEditEmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditMealPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -285,6 +293,9 @@
       <DependentUpon>RestarauntAdminDB.edmx</DependentUpon>
       <LastGenOutput>RestarauntAdminDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Cook.png" />
+    <Resource Include="Resources\Employees.png" />
+    <Resource Include="Resources\Employee.png" />
     <EmbeddedResource Include="Resources\TemplateEmail.txt" />
   </ItemGroup>
   <ItemGroup>

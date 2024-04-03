@@ -83,7 +83,12 @@ namespace RestarauntDeliveryAdministrator.Pages
         private void EditBt_Click(object sender, RoutedEventArgs e)
         {
             var meal = (sender as MenuItem).DataContext as Meal;
-            MessageBox.Show($"{meal.Name}");
+            NavigationService.Navigate(new AddEditMealPage(meal));
+        }
+
+        private void AddBt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddEditMealPage(new Meal()));
         }
     }
 }

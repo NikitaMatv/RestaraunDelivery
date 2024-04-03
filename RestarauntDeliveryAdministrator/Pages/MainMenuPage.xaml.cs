@@ -23,7 +23,7 @@ namespace RestarauntDeliveryAdministrator.Pages
         public MainMenuPage()
         {
             InitializeComponent();
-            //MemuFame.NavigationService.Navigate(new MenuPage());
+            MemuFame.NavigationService.Navigate(new MenuPage());
         }
 
         private void BtHistory_Click(object sender, RoutedEventArgs e)

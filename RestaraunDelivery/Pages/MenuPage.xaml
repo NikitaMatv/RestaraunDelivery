@@ -50,7 +50,7 @@
                                 <RowDefinition Height="Auto"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Border BorderBrush="Gray" BorderThickness="2">
-                                <Image Source="{Binding Meal.Image}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding Images}" Width="100" Height="100" Stretch="Uniform"></Image>
                             </Border>
                             <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left">
 

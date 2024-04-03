@@ -33,9 +33,9 @@
                         <Image Source="/Resources/Menu.png"  Height="34" />
                     </Button.Content>
                 </Button>
-                <Button  Style="{StaticResource RoundButton}"  x:Name="BtCart"  Height="45" Padding="10" Margin="3 20 3 0" ToolTip="Корзина" Click="BtCart_Click">
+                <Button Style="{StaticResource RoundButton}"  x:Name="BtCart"  Height="45" Padding="10" Margin="3 20 3 0" ToolTip="Сотрудники" Click="BtCart_Click">
                     <Button.Content>
-                        <Image Source="/Resources/Basket.png"  Height="34" />
+                        <Image Source="/Resources/Employees.png" Width="45" Height="35"  VerticalAlignment="Center"/>
                     </Button.Content>
                 </Button>
                 <Button  Style="{StaticResource RoundButton}"  x:Name="BtHistory"  Height="45" Padding="10" Margin="3 20 3 0" ToolTip="История заказов " Click="BtHistory_Click">

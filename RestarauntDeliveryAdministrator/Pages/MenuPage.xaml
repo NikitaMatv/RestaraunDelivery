@@ -38,7 +38,6 @@
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="FontFamily" Value="Arial"/>
                                 </Style>
-
                             </Grid.Resources>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"></ColumnDefinition>
@@ -52,10 +51,11 @@
                             <Grid.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Редактировать" x:Name="EditBt" Click="EditBt_Click"></MenuItem>
-                                </ContextMenu>
+                                    <MenuItem Header="Добавить" x:Name="AddBt" Click="AddBt_Click"></MenuItem>
+                                    </ContextMenu>
                             </Grid.ContextMenu>
                             <Border BorderBrush="Gray" BorderThickness="2">
-                                <Image Source="{Binding Meal.Image}" Width="100" Height="100" Stretch="UniformToFill"></Image>
+                                <Image Source="{Binding Images}" Width="100" Height="100" Stretch="Uniform"></Image>
                             </Border>
                             <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left">
 

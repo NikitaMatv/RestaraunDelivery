@@ -24,10 +24,8 @@ namespace RestarauntDeliveryAdministrator.Pages
         public EmployeePage()
         {
             InitializeComponent();
-                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1).ToList();
-                //AddBt.Visibility = Visibility.Visible;
-                //RedBr.Visibility = Visibility.Visible;
-                //DelBt.Visibility = Visibility.Visible;
+            LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).ToList();
+            CbRestaraunt.ItemsSource =App.DB.Restaurant.ToList();
         }
 
         private void AddBt_Click(object sender, RoutedEventArgs e)
@@ -36,22 +34,33 @@ namespace RestarauntDeliveryAdministrator.Pages
         }
      
         private void Refreh()
-        {
+        {         
             if (string.IsNullOrWhiteSpace(TbSelected.Text))
             {
-                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).ToList();
+                if(CbRestaraunt.SelectedIndex == 0)
+                {
+                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).ToList();
+                }
+                else
+                {
+                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true && x.RestaurantID == CbRestaraunt.SelectedIndex +1).ToList();
+                }
             }
             else
             {
-                LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
+                if (CbRestaraunt.SelectedIndex == 0)
+                {
+                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
+                }
+                else
+                {
+                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).Where(d=> d.RestaurantID == CbRestaraunt.SelectedIndex + 1).ToList();
+                }
+                
             }
 
         }
        
-        private void TbSelected_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Refreh();
-        }
 
         private void DellBt_Click(object sender, RoutedEventArgs e)
         {
@@ -76,6 +85,23 @@ namespace RestarauntDeliveryAdministrator.Pages
                 return;
             }
             NavigationService.Navigate(new AddEditEmployeePage(selected));
+        }
+
+        private void BtAll_MouseDown(object sender, MouseButtonEventArgs e)
+        {         
+            TbSelected.Text = string.Empty;
+            CbRestaraunt.SelectedIndex = 0;
+            Refreh();
+        }
+
+        private void CbRestaraunt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Refreh();
+        }
+
+        private void TbSelected_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refreh();
         }
     }
 }

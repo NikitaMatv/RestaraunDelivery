@@ -30,7 +30,7 @@ namespace RestarauntDeliveryAdministrator.Pages
             ContextEmployee = employee;
             DataContext = ContextEmployee;
             CbRole.ItemsSource = App.DB.EmployeeRole.Where(x=>x.ID != 1).ToList();
-            CbAddres.ItemsSource = App.DB.Restaurant.ToList();
+            CbAddres.ItemsSource = App.DB.Restaurant.Where(x=>x.ID != 1).ToList();
             if (ContextEmployee.ID == 0)
             {
                 LoginTb.IsReadOnly = false;

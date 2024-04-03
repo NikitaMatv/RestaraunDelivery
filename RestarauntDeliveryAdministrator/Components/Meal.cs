@@ -33,5 +33,6 @@ namespace RestarauntDeliveryAdministrator.Components
         public virtual ICollection<Meal_Ingridient> Meal_Ingridient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Meal> Order_Meal { get; set; }
+        public byte[] Image { get; internal set; }
     }
 }
