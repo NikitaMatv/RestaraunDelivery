@@ -47,6 +47,7 @@ namespace RestarauntDeliveryAdministrator.Pages
                     MessageBox.Show("Некорректный email");
                     return;
                 }
+                ContextEmployee.IsDismissed = false;
                 if (ContextEmployee.ID == 0)
                 {
                     ContextEmployee.Password = GenerateLoginPassword();

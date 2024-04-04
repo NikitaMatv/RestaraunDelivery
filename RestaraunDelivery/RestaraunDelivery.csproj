@@ -263,6 +263,7 @@
       <DependentUpon>RestaraunDB.edmx</DependentUpon>
       <LastGenOutput>RestaraunDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\UpdateEmployees.png" />
     <Resource Include="Resources\Cook.png" />
     <Resource Include="Resources\Employees.png" />
     <Resource Include="Resources\TemplateEmail.txt" />

@@ -38,15 +38,9 @@
                         <Image Source="/Resources/Employees.png" Width="45" Height="35"  VerticalAlignment="Center"/>
                     </Button.Content>
                 </Button>
-                <Button  Style="{StaticResource RoundButton}"  x:Name="BtHistory"  Height="45" Padding="10" Margin="3 20 3 0" ToolTip="История заказов " Click="BtHistory_Click">
+                <Button  Style="{StaticResource RoundButton}"  x:Name="BtHistory"  Height="45" Padding="10" Margin="3 20 3 0" ToolTip="Увелнные сотрудники " Click="BtHistory_Click">
                     <Button.Content>
-                        <Image Source="/Resources/HistoryOfOrders.png"  Height="34"/>
-                    </Button.Content>
-                </Button>
-                <Button  Style="{StaticResource RoundButton}"   x:Name="BtProfile"  Height="45" Padding="10"  Margin="3 20 3 0" ToolTip="Профиль" Click="BtProfile_Click">
-                    <Button.Content>
-                        <Image Source="/Resources/Profile.png"  Height="34"/>
-
+                        <Image Source="/Resources/UpdateEmployees.png"  Height="34"/>
                     </Button.Content>
                 </Button>
                 <Button  Style="{StaticResource RoundButton}"  x:Name="BtExit" VerticalAlignment="Bottom" Margin="3 300 3 3" Height="45" Padding="10"   ToolTip="Выход" Click="BtExit_Click">

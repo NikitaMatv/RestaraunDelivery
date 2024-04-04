@@ -28,9 +28,8 @@ namespace RestarauntDeliveryAdministrator.Pages
 
         private void BtHistory_Click(object sender, RoutedEventArgs e)
         {
-            //MemuFame.NavigationService.Navigate(new HistoryPage());
+            MemuFame.NavigationService.Navigate(new UpdateEmployeesPage());
         }
-
 
         private void BtExit_Click(object sender, RoutedEventArgs e)
         {
@@ -38,12 +37,7 @@ namespace RestarauntDeliveryAdministrator.Pages
             App.LoggedEmployee = null;
             NavigationService.Navigate(new LoginPage());
         }
-
-        private void BtProfile_Click(object sender, RoutedEventArgs e)
-        {
-            //MemuFame.NavigationService.Navigate(new ProfilePage(App.LoggedEmployee));
-        }
-
+    
         private void BtCart_Click(object sender, RoutedEventArgs e)
         {
             MemuFame.NavigationService.Navigate(new EmployeePage());
