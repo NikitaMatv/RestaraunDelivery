@@ -47,5 +47,10 @@ namespace RestarauntDeliveryAdministrator.Pages
         {
             MemuFame.NavigationService.Navigate(new MenuPage());
         }
+
+        private void BtCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            MemuFame.NavigationService.Navigate(new CusomerPage());
+        }
     }
 }

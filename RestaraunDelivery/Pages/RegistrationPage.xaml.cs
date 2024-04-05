@@ -32,15 +32,21 @@ namespace RestaraunDelivery.Pages
 
         private void MainClientBt_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordTb.Text.Trim().Length > 0 && NameTb.Text.Trim().Length > 0 && LoginTb.Text.Trim().Length > 0)
+            if (EmailTb.Text.Trim().Length > 0 && NameTb.Text.Trim().Length > 0 && LoginTb.Text.Trim().Length > 0)
             {
+
+                if (!Regex.IsMatch(ContextCustomer.Email, @"^[\w_.]+@([\w][-\w]?[\w]+\.)+[A-Za-z]{2,4}$"))
+                {
+                    MessageBox.Show("Некорректный email");
+                    return;
+                }
                 if (App.DB.Customer.FirstOrDefault(x => x.Login == LoginTb.Text.Trim()) == null)
                 {
-
-
                     if (ContextCustomer.ID == 0)
                     {
+                        ContextCustomer.Password = GenerateLoginPassword();
                         App.DB.Customer.Add(ContextCustomer);
+                        MessageBox.Show($"Ваш пароль {ContextCustomer.Password}");
                     }
                 }
                 else
@@ -85,6 +91,21 @@ namespace RestaraunDelivery.Pages
             {
                 e.Handled = true;
             }
+        }
+        private string GenerateLoginPassword()
+        {
+            int length = 8;
+
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random random = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[random.Next(valid.Length)]);
+            }
+            Clipboard.SetText(res.ToString());
+            return res.ToString();
+
         }
     }
 }

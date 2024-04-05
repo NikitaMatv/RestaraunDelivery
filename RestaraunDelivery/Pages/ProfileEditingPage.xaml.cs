@@ -32,7 +32,7 @@ namespace RestaraunDelivery.Pages
 
         private void MainClientBt_Click(object sender, RoutedEventArgs e)
         {
-            if (NameTb.Text.Trim().Length > 0 && SurNameTb.Text.Trim().Length > 0 && PhoneTb.Text.Trim().Length > 0)
+            if (NameTb.Text.Trim().Length > 0 && SurNameTb.Text.Trim().Length > 0 && PhoneTb.Text.Trim().Length > 0 && EmailTb.Text.Trim().Length > 0)
             {
                 if (!Regex.IsMatch(ContextCustomer.Email, @"^[\w_.]+@([\w][-\w]?[\w]+\.)+[A-Za-z]{2,4}$"))
                 {

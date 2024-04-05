@@ -38,12 +38,22 @@ namespace RestaraunDelivery.Pages
                 MessageBox.Show("Пароль неверный");
                 return;
             }
+            if (customer.IsDismissed != true)
+            {
+                MessageBox.Show("Аккаунт заблокирован. \n Для разблокировки обратитеть в поддержку на почту 'restaraunt.delivery@gmail.co'. \n С уважение команда Restaraunt Delivery.");
+                return;
+            }
             App.LoggedCustomer = customer;
             NavigationService.Navigate(new MainMenuPage());
         }
         private void RegBt_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RegistrationPage(new Customer()));
+        }
+
+        private void ForgotPassBt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ForgotPasswordPage());
         }
     }
 }

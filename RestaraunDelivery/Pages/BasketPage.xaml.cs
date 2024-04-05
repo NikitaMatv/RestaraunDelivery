@@ -37,7 +37,7 @@ namespace RestaraunDelivery.Pages
             {
                 BtZakaz.Visibility = Visibility.Hidden;
             }
-            CbRestauran.ItemsSource = App.DB.Restaurant.ToList();
+            CbRestauran.ItemsSource = App.DB.Restaurant.Where(x=>x.ID != 1).ToList();
             CbRestauran.SelectedIndex = 0;
         }
 

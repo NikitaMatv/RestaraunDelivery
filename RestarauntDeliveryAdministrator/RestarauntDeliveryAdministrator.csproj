@@ -95,8 +95,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Components\PartialClass\Customer.cs" />
+    <Compile Include="Components\PartialClass\Order_Meal.cs" />
     <Compile Include="Pages\AddEditMealPage.xaml.cs">
       <DependentUpon>AddEditMealPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CusomerPage.xaml.cs">
+      <DependentUpon>CusomerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UpdateEmployeesPage.xaml.cs">
       <DependentUpon>UpdateEmployeesPage.xaml</DependentUpon>
@@ -186,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AddEditMealPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CusomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,6 +309,7 @@
       <DependentUpon>RestarauntAdminDB.edmx</DependentUpon>
       <LastGenOutput>RestarauntAdminDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Customer.png" />
     <Resource Include="Resources\UpdateEmployees.png" />
     <Resource Include="Resources\Cook.png" />
     <Resource Include="Resources\Employees.png" />

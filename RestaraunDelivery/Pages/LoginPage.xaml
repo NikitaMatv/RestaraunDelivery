@@ -25,8 +25,9 @@
                     <Border CornerRadius="20" Background="Transparent" BorderBrush="Black" BorderThickness="2" Opacity="0.6" >
                         <PasswordBox  Opacity="0.6"  x:Name="PasswordTb" BorderBrush="Transparent" BorderThickness="0" Padding="20 0 0 0" FontSize="25" Width="250" Height="40"></PasswordBox>
                     </Border>
-                    <Button Margin="0 50 0 0" FontWeight="ExtraBold" Foreground="Black" FontSize="12" x:Name="AutorBt"  Style="{StaticResource RoundButton}" Click="AutorBt_Click" Height="40" Width="180">Войти</Button>
-                    <Button Margin="0 20 0 0" FontWeight="ExtraBold" Foreground="Black" FontSize="12" x:Name="RegBt"  Style="{StaticResource RoundButton}" Click="RegBt_Click" Height="40" Width="180">Регистрация</Button>
+                    <Button Margin="0 15 0 0" FontWeight="ExtraBold" Foreground="Black" FontSize="12" x:Name="AutorBt"  Style="{StaticResource RoundButton}" Click="AutorBt_Click" Height="40" Width="180">Войти</Button>
+                    <Button Margin="0 15 0 0" FontWeight="ExtraBold" Foreground="Black" FontSize="12" x:Name="ForgotPassBt"  Style="{StaticResource RoundButton}" Click="ForgotPassBt_Click" Height="40" Width="180">Востановить пароль</Button>
+                    <Button Margin="0 15 0 0" FontWeight="ExtraBold" Foreground="Black" FontSize="12" x:Name="RegBt"  Style="{StaticResource RoundButton}" Click="RegBt_Click" Height="40" Width="180">Регистрация</Button>
                 </StackPanel>
             </StackPanel>
         </Border>

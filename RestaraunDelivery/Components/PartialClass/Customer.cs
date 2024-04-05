@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestarauntDeliveryAdministrator.Components
+namespace RestaraunDelivery.Components
 {
-    public partial class Employee
+    public partial class Customer
     {
         public string StrFullName
         {
@@ -14,15 +14,14 @@ namespace RestarauntDeliveryAdministrator.Components
             {
                 if (Patronymic == null)
                 {
-                    return $"{Surname} {Name.ToCharArray()[0]}.";
+                    return $"{SurName} {FirstName.ToCharArray()[0]}.";
                 }
                 else
                 {
-                    return $"{Surname} {Name.ToCharArray()[0]}. {Patronymic.ToCharArray()[0]}.";
+                    return $"{SurName} {FirstName.ToCharArray()[0]}. {Patronymic.ToCharArray()[0]}.";
                 }
-           
+
             }
         }
-       
     }
 }

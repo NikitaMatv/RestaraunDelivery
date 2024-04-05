@@ -40,20 +40,6 @@ namespace RestarauntDeliveryAdministrator.Pages
         }
 
 
-        private void DellBt_Click(object sender, RoutedEventArgs e)
-        {
-            var selected = (sender as MenuItem).DataContext as Employee;
-            if (selected == null)
-            {
-                MessageBox.Show("Ошбика. Сотрудник не найден.");
-                return;
-            }
-            MessageBox.Show("Для восстановления сотрудники проверьте корректность данных о нем.");
-            NavigationService.Navigate(new AddEditEmployeePage(selected));
-        }
-
-        
-
         private void BtAll_MouseDown(object sender, MouseButtonEventArgs e)
         {
             TbSelected.Text = string.Empty;
@@ -63,6 +49,18 @@ namespace RestarauntDeliveryAdministrator.Pages
         private void TbSelected_TextChanged(object sender, TextChangedEventArgs e)
         {
             Refreh();
+        }
+
+        private void AddBt_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = (sender as MenuItem).DataContext as Employee;
+            if (selected == null)
+            {
+                MessageBox.Show("Ошбика. Сотрудник не найден.");
+                return;
+            }
+            MessageBox.Show("Для восстановления сотрудники проверьте корректность данных о нем.");
+            NavigationService.Navigate(new AddEditEmployeePage(selected));
         }
     }
 }

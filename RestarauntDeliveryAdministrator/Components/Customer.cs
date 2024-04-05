@@ -29,6 +29,7 @@ namespace RestarauntDeliveryAdministrator.Components
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public Nullable<bool> IsDismissed { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Meal> Order_Meal { get; set; }

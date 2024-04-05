@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Components\PartialClass\Customer.cs" />
     <Compile Include="Components\PartialClass\Order.cs" />
     <Compile Include="Pages\DetailsOrderPage.xaml.cs">
       <DependentUpon>DetailsOrderPage.xaml</DependentUpon>
@@ -263,10 +264,11 @@
       <DependentUpon>RestaraunDB.edmx</DependentUpon>
       <LastGenOutput>RestaraunDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Customer.png" />
     <Resource Include="Resources\UpdateEmployees.png" />
     <Resource Include="Resources\Cook.png" />
     <Resource Include="Resources\Employees.png" />
-    <Resource Include="Resources\TemplateEmail.txt" />
+    <EmbeddedResource Include="Resources\TemplateEmail.txt" />
     <Resource Include="Resources\Employee.png" />
     <Resource Include="Resources\Contact-us.png" />
     <Resource Include="Resources\Dessert.png" />

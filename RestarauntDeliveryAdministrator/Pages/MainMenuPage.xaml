@@ -43,6 +43,11 @@
                         <Image Source="/Resources/UpdateEmployees.png"  Height="34"/>
                     </Button.Content>
                 </Button>
+                <Button  Style="{StaticResource RoundButton}"  x:Name="BtCustomer"  Height="45" Padding="10" Margin="3 20 3 0" ToolTip="Список клиентов " Click="BtCustomer_Click">
+                    <Button.Content>
+                        <Image Source="/Resources/Customer.png"  Height="34"/>
+                    </Button.Content>
+                </Button>
                 <Button  Style="{StaticResource RoundButton}"  x:Name="BtExit" VerticalAlignment="Bottom" Margin="3 300 3 3" Height="45" Padding="10"   ToolTip="Выход" Click="BtExit_Click">
                     <Button.Content>
                         <Image Source="/Resources/Exit.png" Height="34"/>

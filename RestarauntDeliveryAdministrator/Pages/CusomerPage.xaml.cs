@@ -17,15 +17,14 @@ using System.Windows.Shapes;
 namespace RestarauntDeliveryAdministrator.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EmployeePage.xaml
+    /// Логика взаимодействия для CusomerPage.xaml
     /// </summary>
-    public partial class EmployeePage : Page
+    public partial class CusomerPage : Page
     {
-        public EmployeePage()
+        public CusomerPage()
         {
             InitializeComponent();
-            LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).ToList();
-            CbRestaraunt.ItemsSource =App.DB.Restaurant.ToList();
+            LVCustomer.ItemsSource = App.DB.Customer.Where(x =>x.IsDismissed != true).ToList();
             CbRestaraunt.SelectedIndex = 0;
         }
 
@@ -33,63 +32,66 @@ namespace RestarauntDeliveryAdministrator.Pages
         {
             NavigationService.Navigate(new AddEditEmployeePage(new Employee()));
         }
-     
+
         private void Refreh()
-        {         
+        {
             if (string.IsNullOrWhiteSpace(TbSelected.Text))
             {
-                if(CbRestaraunt.SelectedIndex == 0)
+                if (CbRestaraunt.SelectedIndex == 0)
                 {
-                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).ToList();
+                    LVCustomer.ItemsSource = App.DB.Customer.Where(x =>x.IsDismissed != true).ToList();
                 }
                 else
-                {
-                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true && x.RestaurantID == CbRestaraunt.SelectedIndex +1).ToList();
+                {               
+                        LVCustomer.ItemsSource = App.DB.Customer.Where(x => x.IsDismissed == true).ToList();  
                 }
             }
             else
             {
                 if (CbRestaraunt.SelectedIndex == 0)
                 {
-                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
+                    LVCustomer.ItemsSource = App.DB.Customer.Where(x =>x.IsDismissed != true).Where(a => a.FirstName.ToLower().Contains(TbSelected.Text.ToLower()) || a.SurName.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
                 }
                 else
                 {
-                    LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).Where(d=> d.RestaurantID == CbRestaraunt.SelectedIndex + 1).ToList();
+                    LVCustomer.ItemsSource = App.DB.Customer.Where(x =>x.IsDismissed == true).Where(a => a.FirstName.ToLower().Contains(TbSelected.Text.ToLower()) || a.SurName.ToLower().Contains(TbSelected.Text.ToLower())).ToList();
                 }
-                
+
             }
 
         }
-       
+
 
         private void DellBt_Click(object sender, RoutedEventArgs e)
         {
-            var selected = (sender as MenuItem).DataContext as Employee;
-            if(selected == null)
+            var selected = (sender as MenuItem).DataContext as Customer;
+            if (selected == null)
             {
-                MessageBox.Show("Ошбика. Сотрудник не найден.");
+                MessageBox.Show("Ошбика. Клиент не найден.");
                 return;
             }
             selected.IsDismissed = true;
             App.DB.SaveChanges();
-            MessageBox.Show($"Сотрудник {selected.StrFullName} был уволен");
+            MessageBox.Show($"Клиент {selected.StrFullName} был заблокирован");
             Refreh();
         }
 
         private void EditBt_Click(object sender, RoutedEventArgs e)
         {
-            var selected = (sender as MenuItem).DataContext as Employee;
+            var selected = (sender as MenuItem).DataContext as Customer;
             if (selected == null)
             {
-                MessageBox.Show("Ошбика. Сотрудник не найден.");
+                MessageBox.Show("Ошбика. Клиент не найден.");
                 return;
             }
-            NavigationService.Navigate(new AddEditEmployeePage(selected));
+            selected.IsDismissed = false;
+            App.DB.SaveChanges();
+            MessageBox.Show($"Клиент {selected.StrFullName} был разблокирован");
+            Refreh();
         }
 
         private void BtAll_MouseDown(object sender, MouseButtonEventArgs e)
-        {         
+        {
             TbSelected.Text = string.Empty;
             CbRestaraunt.SelectedIndex = 0;
             Refreh();
