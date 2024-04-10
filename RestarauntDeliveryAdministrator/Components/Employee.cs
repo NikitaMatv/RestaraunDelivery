@@ -19,6 +19,7 @@ namespace RestarauntDeliveryAdministrator.Components
         {
             this.Deliverer = new HashSet<Deliverer>();
             this.Delivery = new HashSet<Delivery>();
+            this.Order = new HashSet<Order>();
         }
     
         public int ID { get; set; }
@@ -39,5 +40,7 @@ namespace RestarauntDeliveryAdministrator.Components
         public virtual ICollection<Delivery> Delivery { get; set; }
         public virtual EmployeeRole EmployeeRole { get; set; }
         public virtual Restaurant Restaurant { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

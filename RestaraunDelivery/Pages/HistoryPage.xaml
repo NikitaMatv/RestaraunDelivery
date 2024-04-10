@@ -56,7 +56,7 @@
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="18" FontWeight="Bold" Text=" Дата заказа: " ></TextBlock>
-                                    <TextBlock FontSize="18" Text="{Binding DateTime , ConverterCulture=ru, StringFormat=D}" ></TextBlock>
+                                    <TextBlock FontSize="18" Text="{Binding DateTimes , ConverterCulture=ru, StringFormat=D}" ></TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock FontSize="18" FontWeight="Bold" Text=" Статус заказа: "></TextBlock>

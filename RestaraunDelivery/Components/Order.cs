@@ -22,16 +22,18 @@ namespace RestaraunDelivery.Components
         }
     
         public int ID { get; set; }
-        public Nullable<System.DateTime> DateTime { get; set; }
+        public Nullable<System.DateTime> DateTimes { get; set; }
         public Nullable<int> StatusID { get; set; }
         public Nullable<int> OptionsID { get; set; }
         public Nullable<int> Code { get; set; }
         public Nullable<int> Price { get; set; }
         public string Address { get; set; }
         public Nullable<int> RestaurantID { get; set; }
+        public Nullable<int> EmployeeID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Delivery> Delivery { get; set; }
+        public virtual Employee Employee { get; set; }
         public virtual Options Options { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Meal> Order_Meal { get; set; }

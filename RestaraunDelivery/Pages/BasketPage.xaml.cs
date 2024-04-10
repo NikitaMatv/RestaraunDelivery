@@ -82,7 +82,7 @@ namespace RestaraunDelivery.Pages
         {
             Order zakaz = new Order();
             zakaz.Price = int.Parse(TbPrice.Text);
-            zakaz.DateTime = DateTime.Now;
+            zakaz.DateTimes = DateTime.Now;
             zakaz.Address = TbAddress.Text;
             zakaz.StatusID = 1;
             if(CbDeliverer.IsChecked == true)
