@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RestatauntDeliveryShev.Pages
+namespace RestarauntDeliveryCook.Pages
 {
     /// <summary>
     /// Логика взаимодействия для MainMenuPage.xaml
@@ -23,14 +23,19 @@ namespace RestatauntDeliveryShev.Pages
         public MainMenuPage()
         {
             InitializeComponent();
-            MemuFame.NavigationService.Navigate(new MenuPage());
+            var oreder = App.DB.Order.FirstOrDefault(x => x.EmployeeID == App.LoggedEmployee.ID && x.StatusID == 2);
+            if (oreder != null)
+            {
+                MemuFame.NavigationService.Navigate(new OrderFulfillmentPage(oreder));
+            }
+            else
+            {
+                MemuFame.NavigationService.Navigate(new OrderPage());
+            }
+           
         }
 
-        private void BtHistory_Click(object sender, RoutedEventArgs e)
-        {
-            MemuFame.NavigationService.Navigate(new UpdateEmployeesPage());
-        }
-
+       
         private void BtExit_Click(object sender, RoutedEventArgs e)
         {
             App.IsAutorizate = false;
@@ -38,14 +43,9 @@ namespace RestatauntDeliveryShev.Pages
             NavigationService.Navigate(new LoginPage());
         }
 
-        private void BtCart_Click(object sender, RoutedEventArgs e)
-        {
-            MemuFame.NavigationService.Navigate(new EmployeePage());
-        }
-
         private void BtMenu_Click(object sender, RoutedEventArgs e)
         {
-            MemuFame.NavigationService.Navigate(new MenuPage());
+            MemuFame.NavigationService.Navigate(new OrderPage());
         }
 
     }

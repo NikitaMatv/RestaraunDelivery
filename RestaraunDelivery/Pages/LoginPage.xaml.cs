@@ -38,9 +38,9 @@ namespace RestaraunDelivery.Pages
                 MessageBox.Show("Пароль неверный");
                 return;
             }
-            if (customer.IsDismissed != true)
+            if (customer.IsDismissed == true)
             {
-                MessageBox.Show("Аккаунт заблокирован. \n Для разблокировки обратитеть в поддержку на почту 'restaraunt.delivery@gmail.co'. \n С уважение команда Restaraunt Delivery.");
+                MessageBox.Show("Аккаунт заблокирован. \n Для разблокировки обратитеть в поддержку на почту 'restaraunt.delivery@gmail.com'. \n С уважение команда Restaraunt Delivery.");
                 return;
             }
             App.LoggedCustomer = customer;

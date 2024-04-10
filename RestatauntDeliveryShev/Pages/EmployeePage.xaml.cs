@@ -24,9 +24,7 @@ namespace RestatauntDeliveryShev.Pages
         public EmployeePage()
         {
             InitializeComponent();
-            LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true && x.RestaurantID == App.LoggedEmployee.RestaurantID).ToList();
-            CbRestaraunt.ItemsSource = App.DB.Restaurant.ToList();
-            CbRestaraunt.SelectedIndex = 0;
+            LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID == 4 && x.IsDismissed != true && x.RestaurantID == App.LoggedEmployee.RestaurantID).ToList();
         }
 
         private void AddBt_Click(object sender, RoutedEventArgs e)
@@ -38,11 +36,11 @@ namespace RestatauntDeliveryShev.Pages
         {
             if (string.IsNullOrWhiteSpace(TbSelected.Text))
             {
-               LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true && x.RestaurantID == App.LoggedEmployee.RestaurantID).ToList();                    
+               LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID == 4 && x.IsDismissed != true && x.RestaurantID == App.LoggedEmployee.RestaurantID).ToList();                    
             }
             else
             {      
-               LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID != 1 && x.IsDismissed != true && x.RestaurantID == App.LoggedEmployee.RestaurantID).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();                         
+               LVEmployee.ItemsSource = App.DB.Employee.Where(x => x.RoleID == 4 && x.IsDismissed != true && x.RestaurantID == App.LoggedEmployee.RestaurantID).Where(a => a.Name.ToLower().Contains(TbSelected.Text.ToLower()) || a.Surname.ToLower().Contains(TbSelected.Text.ToLower())).ToList();                         
             }
 
         }
@@ -76,7 +74,6 @@ namespace RestatauntDeliveryShev.Pages
         private void BtAll_MouseDown(object sender, MouseButtonEventArgs e)
         {
             TbSelected.Text = string.Empty;
-            CbRestaraunt.SelectedIndex = 0;
             Refreh();
         }
 

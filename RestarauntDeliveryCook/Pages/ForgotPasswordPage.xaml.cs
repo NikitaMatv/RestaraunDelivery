@@ -1,4 +1,4 @@
-﻿using RestatauntDeliveryShev.Services;
+﻿using RestarauntDeliveryCook.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RestatauntDeliveryShev.Pages
+namespace RestarauntDeliveryCook.Pages
 {
     /// <summary>
     /// Логика взаимодействия для ForgotPasswordPage.xaml
@@ -112,4 +112,3 @@ namespace RestatauntDeliveryShev.Pages
         }
     }
 }
-

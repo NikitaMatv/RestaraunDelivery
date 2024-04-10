@@ -1,4 +1,4 @@
-﻿using RestatauntDeliveryShev.Pages;
+﻿using RestarauntDeliveryCook.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RestatauntDeliveryShev
+namespace RestarauntDeliveryCook
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -25,26 +25,26 @@ namespace RestatauntDeliveryShev
         {
             InitializeComponent();
             MainFrame.NavigationService.Navigate(new LoginPage());
-          
+
         }
 
 
-    private void ImgCollapse_MouseDown(object sender, MouseButtonEventArgs e)
-    {
-        this.WindowState = WindowState.Minimized;
-    }
-
-    private void ImgClose_MouseDown(object sender, MouseButtonEventArgs e)
-    {
-        this.Close();
-    }
-
-    private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
-    {
-        if (Mouse.LeftButton == MouseButtonState.Pressed)
+        private void ImgCollapse_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void ImgClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
     }
-}
 }
