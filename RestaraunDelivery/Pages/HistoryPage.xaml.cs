@@ -21,10 +21,13 @@ namespace RestaraunDelivery.Pages
     /// </summary>
     public partial class HistoryPage : Page
     {
+           
+
         public HistoryPage()
         {
             InitializeComponent();
-            LbCart.ItemsSource = App.DB.Order.Where(x => x.Order_Meal.FirstOrDefault(z=>z.CustomerID  == App.LoggedCustomer.ID) != null).ToList();        
+
+            LbCart.ItemsSource = App.DB.Order.Where(x => x.Order_Meal.FirstOrDefault(z => z.CustomerID == App.LoggedCustomer.ID) != null).ToList();
         }
         private void BtDetails_Click(object sender, RoutedEventArgs e)
         {
@@ -32,5 +35,6 @@ namespace RestaraunDelivery.Pages
             NavigationService.Navigate(new DetailsOrderPage(meal));
            
         }
+
     }
 }

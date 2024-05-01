@@ -13,6 +13,11 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto"></RowDefinition>
+            <RowDefinition  Height="45"></RowDefinition>
+        </Grid.RowDefinitions>
+
         <ListBox VerticalAlignment="Top" Grid.ColumnSpan="2" Height="600"  x:Name="LbCart" HorizontalContentAlignment="Stretch" AlternationCount="2">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

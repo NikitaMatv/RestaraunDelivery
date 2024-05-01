@@ -254,6 +254,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Components\rDB.sql" />
     <Content Include="Components\RestaraunDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RestaraunDB.Context.cs</LastGenOutput>
